@@ -199,8 +199,7 @@ public class Board extends JPanel implements MouseListener {
     		System.out.println("I did not understand what you said");
     		return;
     	}
-    	System.out.println("speechCalled: " + speechReceived);
-        String[] coordinates = speechReceived.split(" ");
+    	String[] coordinates = speechReceived.split(" ");
         if (coordinates.length == 1)
         {
         	//rarely passes in single word that is not unk, should only be passing in two words, prevents
@@ -208,7 +207,6 @@ public class Board extends JPanel implements MouseListener {
         	System.out.println("I did not understand what you said");
     		return;
         }
-        System.out.println("0: " + coordinates[0] + " 1: " + coordinates[1]);
         String[] xcoords = {"alpha", "bravo", "charlie", "delta", "echo",
                             "foxtrot", "golf", "hotel"};
         String[] ycoords = {"one", "two", "three", "four", "five", "six",
@@ -223,7 +221,6 @@ public class Board extends JPanel implements MouseListener {
                 y = i;
         }
 
-        System.out.println("X: " + x + " Y: " + y);
         //board display is flipped on x and y, 7 - y to account for it being reversed
         Position spokenPosition = gameBoard[7 - y][x];
 
