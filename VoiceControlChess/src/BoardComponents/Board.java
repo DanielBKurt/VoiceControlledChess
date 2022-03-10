@@ -146,7 +146,7 @@ public class Board extends JPanel implements MouseListener {
             selectedPiece = null;
         }
     }
-
+    
     /***
      * TODO - add checkmate detection
      * controlling the game via mouse
@@ -154,9 +154,10 @@ public class Board extends JPanel implements MouseListener {
      * right-click to deselect
      */
     @Override
-    public void mouseClicked(MouseEvent e) {        
+    public void mousePressed(MouseEvent e)
+    {
         Position clickedPosition = (Position) this.getComponentAt(new Point(e.getX(), e.getY()));
-
+        
         if(e.getButton() == MouseEvent.BUTTON1 && selectedPiece == null) {
             if(!clickedPosition.isFree() && clickedPosition.getPiece().getSide() == turn) {
                 selectedPiece = clickedPosition.getPiece();
@@ -168,15 +169,15 @@ public class Board extends JPanel implements MouseListener {
         } else if (e.getButton() == MouseEvent.BUTTON1 && selectedPiece != null) {
             if(clickedPosition.isFree() || clickedPosition.getPiece().getSide() != turn) {
                 if(selectedMovablePositions.contains(clickedPosition)) {
-                	boolean kingTaken = false;
-                	if (!(clickedPosition.isFree()) && clickedPosition.getPiece().name().equals("(K)"))
-                		kingTaken = true;
+                    boolean kingTaken = false;
+                    if (!(clickedPosition.isFree()) && clickedPosition.getPiece().name().equals("(K)"))
+                    kingTaken = true;
                     selectedPiece.move(clickedPosition);
                     deselectPiece();
                     if (kingTaken)
-                    	kingWasTaken();
+                    kingWasTaken();
                     else
-                    	nextTurn();
+                    nextTurn();
                 }
             }
         } 
@@ -185,45 +186,44 @@ public class Board extends JPanel implements MouseListener {
         }
         repaint();
     }
-
     public void speechCalled(String speechReceived)
     {
-    	if (speechReceived.equals("clear")) //say clear to unselect piece, clear because sphinx 4 cant understand unselect
+        if (speechReceived.equals("clear")) //say clear to unselect piece, clear because sphinx 4 cant understand unselect
     	{
-    		deselectPiece();
+            deselectPiece();
     		return;
     	}
     	else if (speechReceived.equals("<unk>"))
     	{
-    		//<unk> means recognizer did not understand speech
+            //<unk> means recognizer did not understand speech
     		System.out.println("I did not understand what you said");
     		return;
     	}
     	String[] coordinates = speechReceived.split(" ");
         if (coordinates.length == 1)
         {
-        	//rarely passes in single word that is not unk, should only be passing in two words, prevents
+            //rarely passes in single word that is not unk, should only be passing in two words, prevents
         	//out of bounds error by accessing coordinates[1] below
         	System.out.println("I did not understand what you said");
     		return;
         }
         String[] xcoords = {"alpha", "bravo", "charlie", "delta", "echo",
-                            "foxtrot", "golf", "hotel"};
+        "foxtrot", "golf", "hotel"};
         String[] ycoords = {"one", "two", "three", "four", "five", "six",
-                            "seven", "eight"};
+        "seven", "eight"};
         int x = 0;
         int y = 0;
         for (int i = 0; i < 8; i++)
         {
             if (xcoords[i].equals(coordinates[0]))
-                x = i;
+            x = i;
             if (ycoords[i].equals(coordinates[1]))
-                y = i;
+            y = i;
         }
-
+        
         //board display is flipped on x and y, 7 - y to account for it being reversed
         Position spokenPosition = gameBoard[7 - y][x];
-
+        
         if(selectedPiece == null) {
             if(!spokenPosition.isFree() && spokenPosition.getPiece().getSide() == turn) {
                 selectedPiece = spokenPosition.getPiece();
@@ -235,15 +235,15 @@ public class Board extends JPanel implements MouseListener {
         } else if (selectedPiece != null) {
             if(spokenPosition.isFree() || spokenPosition.getPiece().getSide() != turn) {
                 if(selectedMovablePositions.contains(spokenPosition)) {
-                	boolean kingTaken = false;
+                    boolean kingTaken = false;
                 	if (!(spokenPosition.isFree()) && spokenPosition.getPiece().name().equals("(K)"))
-                		kingTaken = true;
+                    kingTaken = true;
                     selectedPiece.move(spokenPosition);
                     deselectPiece();
                     if (kingTaken)
-                    	kingWasTaken();
+                    kingWasTaken();
                     else
-                    	nextTurn();
+                    nextTurn();
                 }
             }
         } 
@@ -252,23 +252,23 @@ public class Board extends JPanel implements MouseListener {
         }
         repaint();
     }
-
-
+    
+    
     /**
      * since the board implements MouseListner, 
      * the following methods have to be overridden. 
      * currently left empty as they are not needed
      */
     @Override
-    public void mousePressed(MouseEvent e) { }
-
+    public void mouseClicked(MouseEvent e) { }
+    
     @Override
     public void mouseReleased(MouseEvent e) { }
-
+    
     @Override
     public void mouseEntered(MouseEvent e) { }
-
+    
     @Override
     public void mouseExited(MouseEvent e) { }
-
+    
 }
