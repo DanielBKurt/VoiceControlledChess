@@ -1,0 +1,24 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar 
+ */
+
+grammar grammar;
+public <alphacoords> = ( alpha one | alpha two | alpha three | alpha four 
+			| alpha five | alpha six | alpha seven | alpha eight );
+public <bravocoords> = ( bravo one | bravo two | bravo three | bravo four 
+			| bravo five | bravo six | bravo seven | bravo eight );
+public <charliecoords> = ( charlie one | charlie two | charlie three | charlie four
+			| charlie five | charlie six | charlie seven | charlie eight );
+public <deltacoords> = ( delta one | delta two | delta three | delta four
+			| delta five | delta six | delta seven | delta eight );
+public <echocoords> = ( echo one | echo two | echo three | echo four
+			| echo five | echo six | echo seven | echo eight );
+public <foxtrotcoords> = ( foxtrot one | foxtrot two | foxtrot three | foxtrot four
+			| foxtrot five | foxtrot six | foxtrot seven | foxtrot eight );
+public <golfcoords> = ( golf one | golf two | golf three | golf four
+			| golf five | golf six | golf seven | golf eight );
+public <hotelcoords> = ( hotel one | hotel two | hotel three | hotel four
+			| hotel five | hotel six | hotel seven | hotel eight );
+public <commands> = ( clear );
