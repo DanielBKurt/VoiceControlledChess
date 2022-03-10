@@ -15,24 +15,24 @@ public class Tag {
     public static final int IMAGE_HEIGHT = 75;
     
     // lazy chess icon
-    public static final String LAZY_ICON = "assets\\lazy_chess_icon.jpg";
+    public static final String LAZY_ICON = "VoiceControlChess\\assets\\lazy_chess_icon.jpg";
     public static final String TITLE = "Voice Controlled Chess";
 
     // white piece images
-    public static final String WHITE_KING = "assets\\white_king.png";
-    public static final String WHITE_QUEEN = "assets\\white_queen.png";
-    public static final String WHITE_KNIGHT = "assets\\white_knight.png";
-    public static final String WHITE_ROOK = "assets\\white_rook.png";
-    public static final String WHITE_BISHOP = "assets\\white_bishop.png";
-    public static final String WHITE_PAWN = "assets\\white_pawn.png";
+    public static final String WHITE_KING = "VoiceControlChess\\assets\\white_king.png";
+    public static final String WHITE_QUEEN = "VoiceControlChess\\assets\\white_queen.png";
+    public static final String WHITE_KNIGHT = "VoiceControlChess\\assets\\white_knight.png";
+    public static final String WHITE_ROOK = "VoiceControlChess\\assets\\white_rook.png";
+    public static final String WHITE_BISHOP = "VoiceControlChess\\assets\\white_bishop.png";
+    public static final String WHITE_PAWN = "VoiceControlChess\\assets\\white_pawn.png";
 
     // black piece images
-    public static final String BLACK_KING = "assets\\black_king.png";
-    public static final String BLACK_QUEEN = "assets\\black_queen.png";
-    public static final String BLACK_KNIGHT = "assets\\black_knight.png";
-    public static final String BLACK_ROOK = "assets\\black_rook.png";
-    public static final String BLACK_BISHOP = "assets\\black_bishop.png";
-    public static final String BLACK_PAWN = "assets\\black_pawn.png";
+    public static final String BLACK_KING = "VoiceControlChess\\assets\\black_king.png";
+    public static final String BLACK_QUEEN = "VoiceControlChess\\assets\\black_queen.png";
+    public static final String BLACK_KNIGHT = "VoiceControlChess\\assets\\black_knight.png";
+    public static final String BLACK_ROOK = "VoiceControlChess\\assets\\black_rook.png";
+    public static final String BLACK_BISHOP = "VoiceControlChess\\assets\\black_bishop.png";
+    public static final String BLACK_PAWN = "VoiceControlChess\\assets\\black_pawn.png";
 
     // const for board size
     public static final int SIZE_MAX = 8;
